@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BeerApp</string>
+    <string name="abv">%.1f%%</string>
+    <string name="hops">Hops: %s</string>
+    <string name="malt">Malt: %s</string>
+    <string name="yeast">Yeast: %s</string>
+</resources>
