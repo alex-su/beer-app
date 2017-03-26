@@ -1,16 +1,16 @@
-package com.alexsukharev.beerapp.database.manager;
+package com.alexsukharev.beerapp.cache.manager;
 
 import android.support.annotation.NonNull;
 
-import com.alexsukharev.beerapp.database.OnChangeListener;
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.cache.OnChangeListener;
+import com.alexsukharev.beerapp.model.Beer;
 
 import java.util.List;
 
 import io.realm.RealmResults;
 import rx.Subscription;
 
-public interface IBeerDatabaseManager {
+public interface IBeerCacheManager {
 
     void storeBeers(@NonNull List<Beer> beerList);
 

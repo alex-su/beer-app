@@ -1,9 +1,9 @@
-package com.alexsukharev.beerapp.database.manager;
+package com.alexsukharev.beerapp.cache.manager;
 
 import android.support.annotation.NonNull;
 
-import com.alexsukharev.beerapp.database.OnChangeListener;
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.cache.OnChangeListener;
+import com.alexsukharev.beerapp.model.Beer;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ import rx.Subscription;
  * https://realm.io/docs/java/latest/#working-with-android
  * https://realm.io/docs/java/latest/#controlling-the-lifecycle-of-realm-instances
  */
-public class BeerRealmManager implements IBeerDatabaseManager {
+public class BeerCacheManager implements IBeerCacheManager {
 
     private Realm mRealm;
 

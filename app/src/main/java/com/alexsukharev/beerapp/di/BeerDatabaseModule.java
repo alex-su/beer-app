@@ -1,7 +1,7 @@
 package com.alexsukharev.beerapp.di;
 
-import com.alexsukharev.beerapp.database.manager.BeerRealmManager;
-import com.alexsukharev.beerapp.database.manager.IBeerDatabaseManager;
+import com.alexsukharev.beerapp.cache.manager.BeerCacheManager;
+import com.alexsukharev.beerapp.cache.manager.IBeerCacheManager;
 
 import dagger.Module;
 import dagger.Provides;
@@ -10,7 +10,7 @@ import dagger.Provides;
 public class BeerDatabaseModule {
 
     @Provides
-    IBeerDatabaseManager providesBeerDatabaseManager() {
-        return new BeerRealmManager();
+    IBeerCacheManager providesBeerDatabaseManager() {
+        return new BeerCacheManager();
     }
 }

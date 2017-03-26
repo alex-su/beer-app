@@ -5,9 +5,9 @@ import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
 import com.alexsukharev.beerapp.R;
-import com.alexsukharev.beerapp.database.manager.IBeerDatabaseManager;
-import com.alexsukharev.beerapp.database.model.Beer;
-import com.alexsukharev.beerapp.database.model.Ingredient;
+import com.alexsukharev.beerapp.cache.manager.IBeerCacheManager;
+import com.alexsukharev.beerapp.model.Beer;
+import com.alexsukharev.beerapp.model.Ingredient;
 import com.alexsukharev.beerapp.di.BeerComponent;
 import com.alexsukharev.beerapp.network.manager.IBeerNetworkManager;
 
@@ -21,7 +21,7 @@ public class BeerDetailsViewModel extends BaseViewModel {
     Application mApplication;
 
     @Inject
-    IBeerDatabaseManager mBeerDatabaseManager;
+    IBeerCacheManager mBeerDatabaseManager;
 
     @Inject
     IBeerNetworkManager mBeerNetworkManager;

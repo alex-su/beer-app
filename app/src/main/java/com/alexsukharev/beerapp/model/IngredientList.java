@@ -1,4 +1,4 @@
-package com.alexsukharev.beerapp.database.model;
+package com.alexsukharev.beerapp.model;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;

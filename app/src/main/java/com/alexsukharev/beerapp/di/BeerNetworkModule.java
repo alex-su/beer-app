@@ -3,7 +3,7 @@ package com.alexsukharev.beerapp.di;
 import com.alexsukharev.beerapp.network.PunkApi;
 import com.alexsukharev.beerapp.network.manager.BeerNetworkManager;
 import com.alexsukharev.beerapp.network.manager.IBeerNetworkManager;
-import com.alexsukharev.beerapp.database.manager.IBeerDatabaseManager;
+import com.alexsukharev.beerapp.cache.manager.IBeerCacheManager;
 
 import javax.inject.Singleton;
 
@@ -15,7 +15,7 @@ public class BeerNetworkModule {
 
     @Provides
     @Singleton
-    IBeerNetworkManager providesBeerNetworkManager(final PunkApi punkApi, final IBeerDatabaseManager beerDatabaseManager) {
+    IBeerNetworkManager providesBeerNetworkManager(final PunkApi punkApi, final IBeerCacheManager beerDatabaseManager) {
         return new BeerNetworkManager(punkApi, beerDatabaseManager);
     }
 }

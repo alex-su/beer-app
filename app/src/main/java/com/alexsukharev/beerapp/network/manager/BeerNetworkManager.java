@@ -2,8 +2,8 @@ package com.alexsukharev.beerapp.network.manager;
 
 import android.support.annotation.NonNull;
 
-import com.alexsukharev.beerapp.database.manager.IBeerDatabaseManager;
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.cache.manager.IBeerCacheManager;
+import com.alexsukharev.beerapp.model.Beer;
 import com.alexsukharev.beerapp.network.PunkApi;
 import com.alexsukharev.beerapp.network.common.ErrorConsumer;
 import com.alexsukharev.beerapp.network.common.ResultConsumer;
@@ -17,9 +17,9 @@ import rx.android.schedulers.AndroidSchedulers;
 public class BeerNetworkManager implements IBeerNetworkManager {
 
     private final PunkApi mPunkApi;
-    private final IBeerDatabaseManager mBeerDatabaseManager;
+    private final IBeerCacheManager mBeerDatabaseManager;
 
-    public BeerNetworkManager(@NonNull final PunkApi punkApi, @NonNull final IBeerDatabaseManager beerDatabaseManager) {
+    public BeerNetworkManager(@NonNull final PunkApi punkApi, @NonNull final IBeerCacheManager beerDatabaseManager) {
         mPunkApi = punkApi;
         mBeerDatabaseManager = beerDatabaseManager;
     }

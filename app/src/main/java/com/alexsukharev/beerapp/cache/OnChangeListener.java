@@ -1,4 +1,4 @@
-package com.alexsukharev.beerapp.database;
+package com.alexsukharev.beerapp.cache;
 
 public interface OnChangeListener<E> {
 

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.alexsukharev.beerapp.R;
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.model.Beer;
 import com.alexsukharev.beerapp.databinding.ItemBeerBinding;
 import com.alexsukharev.beerapp.navigator.BeerListNavigator;
 import com.alexsukharev.beerapp.ui.adapter.holder.BeerViewHolder;

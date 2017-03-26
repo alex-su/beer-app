@@ -4,8 +4,8 @@ import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
-import com.alexsukharev.beerapp.database.manager.IBeerDatabaseManager;
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.cache.manager.IBeerCacheManager;
+import com.alexsukharev.beerapp.model.Beer;
 import com.alexsukharev.beerapp.di.BeerComponent;
 import com.alexsukharev.beerapp.network.manager.IBeerNetworkManager;
 
@@ -17,7 +17,7 @@ import io.realm.RealmResults;
 public class BeerListViewModel extends BaseViewModel {
 
     @Inject
-    IBeerDatabaseManager mBeerDatabaseManager;
+    IBeerCacheManager mBeerDatabaseManager;
 
     @Inject
     IBeerNetworkManager mBeerNetworkManager;

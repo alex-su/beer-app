@@ -1,6 +1,6 @@
 package com.alexsukharev.beerapp.network;
 
-import com.alexsukharev.beerapp.database.model.Beer;
+import com.alexsukharev.beerapp.model.Beer;
 
 import java.util.List;
 
