@@ -34,8 +34,8 @@ public class BeerDetailsActivity extends BaseActivity {
         mViewModel = new BeerDetailsViewModel(((App) getApplicationContext()).getBeerComponent(), getIntent().getLongExtra(EXTRA_BEER_ID, -1));
         mBinding.setViewModel(mViewModel);
         initSupportActionBar();
-        observeBeer();
-        observeToastText();
+        subscribeToBeer();
+        subscribeToToastText();
     }
 
     private void initSupportActionBar() {
@@ -44,11 +44,11 @@ public class BeerDetailsActivity extends BaseActivity {
         }
     }
 
-    private void observeBeer() {
+    private void subscribeToBeer() {
         addOnPropertyChangedCallback(mViewModel.beer, () -> mBinding.setBeer(mViewModel.beer.get()));
     }
 
-    private void observeToastText() {
+    private void subscribeToToastText() {
         addOnPropertyChangedCallback(mViewModel.toastText, () -> Toast.makeText(BeerDetailsActivity.this, mViewModel.toastText.get(), Toast.LENGTH_SHORT).show());
     }
 

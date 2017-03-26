@@ -27,8 +27,8 @@ public class BeerListActivity extends BaseActivity implements BeerListNavigator 
         mViewModel = new BeerListViewModel(((App) getApplicationContext()).getBeerComponent());
         mBinding.setViewModel(mViewModel);
         initRecyclerView();
-        observeBeerList();
-        observeToastText();
+        subscribeToBeerList();
+        subscribeToToastText();
     }
 
     private void initRecyclerView() {
@@ -36,8 +36,10 @@ public class BeerListActivity extends BaseActivity implements BeerListNavigator 
         mBinding.recyclerView.setItemAnimator(null);
     }
 
-    private void observeBeerList() {
+    private void subscribeToBeerList() {
         addOnPropertyChangedCallback(mViewModel.beerList, () -> {
+            // mViewModel.beerList.get() returns a RealmResults object which updates automatically,
+            // so we need to pass it to the adapter only once
             if (mBeersAdapter == null) {
                 mBeersAdapter = new BeersAdapter(this, mViewModel.beerList.get(), this);
                 mBinding.recyclerView.setAdapter(mBeersAdapter);
@@ -45,7 +47,7 @@ public class BeerListActivity extends BaseActivity implements BeerListNavigator 
         });
     }
 
-    private void observeToastText() {
+    private void subscribeToToastText() {
         addOnPropertyChangedCallback(mViewModel.toastText, () -> Toast.makeText(this, mViewModel.toastText.get(), Toast.LENGTH_SHORT).show());
     }
 

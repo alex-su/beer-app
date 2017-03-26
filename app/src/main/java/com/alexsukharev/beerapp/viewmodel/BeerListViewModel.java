@@ -17,7 +17,7 @@ import io.realm.RealmResults;
 public class BeerListViewModel extends BaseViewModel {
 
     @Inject
-    IBeerCacheManager mBeerDatabaseManager;
+    IBeerCacheManager mBeerCacheManager;
 
     @Inject
     IBeerNetworkManager mBeerNetworkManager;
@@ -34,7 +34,7 @@ public class BeerListViewModel extends BaseViewModel {
 
     @Override
     public void onStart() {
-        addSubscription(mBeerDatabaseManager.getBeers(beers -> beerList.set(beers)));
+        addSubscription(mBeerCacheManager.getBeers(beers -> beerList.set(beers)));
         if (!mLoadedFromNetwork) {
             loadBeersFromNetwork();
         }
@@ -42,7 +42,7 @@ public class BeerListViewModel extends BaseViewModel {
 
     @Override
     public void onDestroy() {
-        mBeerDatabaseManager.close();
+        mBeerCacheManager.close();
     }
 
     public void onRefresh() {

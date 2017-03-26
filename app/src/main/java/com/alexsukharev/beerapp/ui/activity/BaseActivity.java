@@ -27,6 +27,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    /**
+     * We have this method so OnPropertyChangedCallback.onPropertyChanged() could be used as a lambda
+     */
     protected void addOnPropertyChangedCallback(@NonNull final BaseObservable observable, @NonNull final OnPropertyChangedCallback callback) {
         observable.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
             @Override

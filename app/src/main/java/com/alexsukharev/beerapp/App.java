@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.alexsukharev.beerapp.di.AppModule;
 import com.alexsukharev.beerapp.di.BeerComponent;
-import com.alexsukharev.beerapp.di.BeerDatabaseModule;
+import com.alexsukharev.beerapp.di.BeerCacheModule;
 import com.alexsukharev.beerapp.di.BeerNetworkModule;
 import com.alexsukharev.beerapp.di.DaggerBeerComponent;
 import com.alexsukharev.beerapp.di.NetworkModule;
@@ -22,7 +22,7 @@ public class App extends Application {
         mBeerComponent = DaggerBeerComponent.builder()
                 .appModule(new AppModule(this))
                 .networkModule(new NetworkModule())
-                .beerDatabaseModule(new BeerDatabaseModule())
+                .beerCacheModule(new BeerCacheModule())
                 .beerNetworkModule(new BeerNetworkModule())
                 .build();
     }

@@ -7,10 +7,10 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class BeerDatabaseModule {
+public class BeerCacheModule {
 
     @Provides
-    IBeerCacheManager providesBeerDatabaseManager() {
+    IBeerCacheManager providesBeerCacheManager() {
         return new BeerCacheManager();
     }
 }

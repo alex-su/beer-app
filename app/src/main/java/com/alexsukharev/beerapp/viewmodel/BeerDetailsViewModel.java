@@ -21,7 +21,7 @@ public class BeerDetailsViewModel extends BaseViewModel {
     Application mApplication;
 
     @Inject
-    IBeerCacheManager mBeerDatabaseManager;
+    IBeerCacheManager mBeerCacheManager;
 
     @Inject
     IBeerNetworkManager mBeerNetworkManager;
@@ -43,7 +43,7 @@ public class BeerDetailsViewModel extends BaseViewModel {
 
     @Override
     public void onStart() {
-        addSubscription(mBeerDatabaseManager.getBeerById(mBeerId, (result) -> {
+        addSubscription(mBeerCacheManager.getBeerById(mBeerId, (result) -> {
             beer.set(result);
             setIngredients(result);
         }));
@@ -77,7 +77,7 @@ public class BeerDetailsViewModel extends BaseViewModel {
 
     @Override
     public void onDestroy() {
-        mBeerDatabaseManager.close();
+        mBeerCacheManager.close();
     }
 
     private void loadBeerDetailsFromNetwork() {
